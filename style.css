@@ -1,0 +1,545 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff0f6;
+    color: #5c2341;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 20;
+}
+
+.particle {
+    position: absolute;
+    bottom: -30px;
+    font-size: 15px;
+    animation: floatUp linear forwards;
+    opacity: 0.7;
+}
+
+@keyframes floatUp {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.intro {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(circle at top, #ffd6e7, #ffb6d2, #ff8fba);
+
+    z-index: 100;
+    transition: 1s ease;
+}
+
+.intro.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.intro-content {
+    text-align: center;
+    padding: 30px;
+}
+
+.heart-icon {
+    font-size: 80px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+.intro h1 {
+    font-size: 45px;
+    color: #ffffff;
+    margin: 15px 0;
+}
+
+.intro-name {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    color: #fff;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #e91e63;
+    color: white;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background: #c2185b;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffd6e7,
+            #ffeaf3,
+            #ffc1da
+        );
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.big-heart {
+    font-size: 100px;
+    animation: heartbeat 1.5s infinite;
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #d81b60;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 90px 20px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 35px;
+    color: #d81b60;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    margin-bottom: 40px;
+    color: #8b536c;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.photos-section {
+    background: #fff7fa;
+}
+
+.photo-grid {
+    max-width: 950px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.photo-card {
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 10px 30px rgba(160, 60, 100, 0.12);
+
+    transform: rotate(-1deg);
+
+    transition: 0.3s;
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(1deg);
+}
+
+.photo-card:hover {
+    transform: scale(1.03) rotate(0deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+}
+
+.photo-card p {
+    padding: 15px 5px 8px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter-section {
+    background:
+        linear-gradient(
+            135deg,
+            #ffd8e7,
+            #fff0f6
+        );
+}
+
+.letter-box {
+    max-width: 750px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(170, 60, 100, 0.15);
+
+    text-align: left;
+}
+
+.letter-heart {
+    text-align: center;
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.letter-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.letter-box p {
+    font-size: 17px;
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.love-text {
+    text-align: center;
+
+    font-size: 24px !important;
+
+    color: #e91e63;
+
+    font-weight: bold;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+.music-section {
+    background: #fff7fa;
+}
+
+.music-section p {
+    margin: 15px 0 25px;
+}
+
+
+/* =========================
+   BIRTHDAY
+========================= */
+
+.birthday-section {
+    background:
+        radial-gradient(
+            circle,
+            #ffe3ee,
+            #ffc3da
+        );
+}
+
+.birthday-card {
+    max-width: 600px;
+    margin: auto;
+
+    background: rgba(255,255,255,0.8);
+
+    padding: 50px 30px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 40px rgba(180, 60, 110, 0.15);
+}
+
+.cake {
+    font-size: 80px;
+
+    animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.birthday-card p {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   ENDING
+========================= */
+
+.ending {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fc4,
+            #e91e63
+        );
+
+    color: white;
+
+    padding: 30px;
+}
+
+.huge-heart {
+    font-size: 110px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+.ending h1 {
+    font-size: 60px;
+    margin: 20px 0;
+}
+
+.ending p {
+    font-size: 20px;
+}
+
+.forever {
+    margin-top: 20px;
+    font-size: 25px !important;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: 34px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .big-heart {
+        font-size: 80px;
+    }
+
+    .section {
+        padding: 70px 15px;
+    }
+
+    .section h2 {
+        font-size: 30px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-card img {
+        height: 300px;
+    }
+
+    .letter-box {
+        padding: 30px 22px;
+    }
+
+    .letter-box p {
+        font-size: 16px;
+    }
+
+    .ending h1 {
+        font-size: 45px;
+    }
+.video-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.video-section h2 {
+    color: #ff4f9a;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.video-text {
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: #777;
+    line-height: 1.7;
+}
+
+.video-container {
+    max-width: 800px;
+    margin: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(255, 105, 180, 0.25);
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+}
+}
